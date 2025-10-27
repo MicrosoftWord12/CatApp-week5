@@ -3,10 +3,14 @@ class Cat (val name: String, var age: Int, var weight: Int) {
     // Reduces weight by one
     // Should check if the weight is 5 or more
     // There is a bug - don't resolve until instructed by the exercise.
-    fun walk() :Boolean {
-        if(weight <= 5) {
-            weight--
-            return true
+    fun walk(distance: Int) :Boolean {
+        var currentDistance = distance
+        while(currentDistance >= 0) {
+            if(weight <= 5) {
+                weight--
+                currentDistance--
+                return true
+            }
         }
         return false
     }
